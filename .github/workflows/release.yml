@@ -25,7 +25,7 @@ jobs:
         shell: pwsh
         run: Copy-Item src-tauri/target/release/timemanage.exe TimeManage.exe
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: TimeManage.exe
           generate_release_notes: true
