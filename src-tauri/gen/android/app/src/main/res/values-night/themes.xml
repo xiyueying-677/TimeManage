@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 系统深色模式也保持应用浅色主题，避免状态栏/WebView 观感不一致 -->
+    <style name="Theme.timemanage" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">#f3f7ff</item>
+    </style>
+</resources>

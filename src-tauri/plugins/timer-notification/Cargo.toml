@@ -1,0 +1,18 @@
+[package]
+name = "tauri-plugin-timer-notification"
+version = "0.1.0"
+description = "Android ongoing timer notification for TimeManage"
+edition = "2021"
+links = "tauri-plugin-timer-notification"
+
+[lib]
+name = "tauri_plugin_timer_notification"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-plugin = { version = "=2.6.3", features = ["build"] }
+
+[dependencies]
+tauri = { version = "2" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

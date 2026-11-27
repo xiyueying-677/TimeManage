@@ -1,0 +1,89 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "TimeManage",
+  "version": "0.1.0",
+  "identifier": "com.timemanage.desktop",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "url": "index.html",
+        "title": "时间管理",
+        "width": 1040,
+        "height": 720,
+        "minWidth": 880,
+        "minHeight": 600,
+        "resizable": true,
+        "center": true,
+        "visible": true
+      },
+      {
+        "label": "pomodoro-float",
+        "url": "float.html",
+        "title": "番茄钟",
+        "width": 272,
+        "height": 190,
+        "resizable": true,
+        "maximizable": false,
+        "minimizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "center": false,
+        "visible": false
+      },
+      {
+        "label": "countdown-float",
+        "url": "countdown-float.html",
+        "title": "倒计时",
+        "width": 272,
+        "height": 224,
+        "resizable": true,
+        "maximizable": false,
+        "minimizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": false,
+        "skipTaskbar": true,
+        "shadow": false,
+        "center": false,
+        "visible": false
+      },
+      {
+        "label": "alert",
+        "url": "alert.html",
+        "title": "提醒",
+        "width": 360,
+        "height": 250,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "center": true,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

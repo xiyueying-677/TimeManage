@@ -1,0 +1,59 @@
+name: Bug 报告
+description: 报告可以复现的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！提交前请先确认这不是已知问题（见 `docs/` 与 Releases）。
+        **请不要在截图或日志中包含 IP 地址、局域网配对码、设备名或完整的 `app-data.json`。**
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 发生了什么？你期望的结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开应用…
+        2. 点击…
+        3. 出现…
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 平台
+      options:
+        - Windows
+        - Android
+        - 两者都有
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本 / 提交
+      description: Release 版本号，或 git commit
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / 截图
+      description: 请先脱敏
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我已检查截图与日志，确认不含个人数据
+          required: true

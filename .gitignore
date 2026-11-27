@@ -1,0 +1,53 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Build output ----
+dist/
+src-tauri/target/
+
+# ---- Tauri generated ----
+src-tauri/gen/schemas/
+src-tauri/gen/android/**/build/
+src-tauri/gen/android/.gradle/
+src-tauri/gen/android/.tauri/
+src-tauri/gen/android/local.properties
+
+# ---- Tauri Android plugin build output ----
+src-tauri/plugins/*/android/build/
+src-tauri/plugins/*/android/.gradle/
+src-tauri/plugins/*/android/.tauri/
+src-tauri/plugins/*/android/local.properties
+
+# ---- Local runtime / user data (never commit) ----
+data/
+backup/
+_diag/
+
+# ---- Binaries and installers ----
+TimeManage.exe
+*.exe
+*.apk
+*.aab
+*.msi
+*.dmg
+*.AppImage
+*.deb
+
+# ---- Signing material (never commit) ----
+*.jks
+*.keystore
+*.p12
+*.pfx
+key.properties
+keystore.properties
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# ---- Logs ----
+*.log

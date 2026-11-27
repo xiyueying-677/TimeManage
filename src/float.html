@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>番茄钟</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/float.css" />
+  </head>
+  <body>
+    <div class="float-card" id="card">
+      <div class="float-head" data-tauri-drag-region>
+        <div class="float-title">
+          <span class="dot-phase idle" id="dot"></span>
+          <span id="title">番茄钟</span>
+        </div>
+        <div class="float-head-actions">
+          <button class="float-icon" id="gear" title="设置">⚙</button>
+          <button class="float-icon" id="collapse" title="收起为小图标">▸</button>
+          <button class="float-close" id="close" title="隐藏">×</button>
+        </div>
+      </div>
+
+      <div class="float-time" id="time">25:00</div>
+      <div class="float-bar"><div class="float-bar-fill" id="bar"></div></div>
+      <div class="float-sub" id="sub"></div>
+      <div class="float-actions" id="actions"></div>
+
+      <div class="float-panel" id="panel">
+        <div class="fp-block">
+          <div class="fp-label">模式</div>
+          <div class="chips" id="fpModes"></div>
+          <div id="fpCountdownRow" style="display:none;align-items:center;gap:6px;font-size:12.5px;color:var(--text-soft)">
+            <span>倒计时</span>
+            <input type="number" id="fpCdMinutes" min="1" max="600" style="width:56px;padding:5px 8px;font-size:12.5px;text-align:center" />
+            <span>分</span>
+          </div>
+        </div>
+        <div class="fp-block">
+          <div class="fp-label">大类</div>
+          <div class="chips" id="fpCategories"></div>
+        </div>
+        <div class="fp-block">
+          <div class="fp-row" style="gap:6px">
+            <span class="fp-label">事件</span>
+            <button class="float-icon" id="fpManageEvents" title="管理事件" style="width:auto;padding:0 8px;font-size:11px">管理</button>
+          </div>
+          <div class="chips" id="fpEvents"></div>
+          <div style="display:flex;gap:6px">
+            <input type="text" id="fpNewEvent" placeholder="新事件名称" style="flex:1;padding:6px 9px;font-size:12.5px;border-radius:10px" />
+            <button class="btn small" id="fpAddEvent">添加</button>
+          </div>
+        </div>
+        <div class="fp-block">
+          <div class="fp-label">计时设置（当前事件）</div>
+          <div class="fp-row"><span>学习时长</span><span><input type="number" id="fpStudy" min="1" max="180" /> 分</span></div>
+          <div class="fp-row"><span>休息时长</span><span><input type="number" id="fpBreak" min="1" max="120" /> 分</span></div>
+          <div class="fp-row"><span>循环次数</span><span><input type="number" id="fpCycles" min="1" max="24" /> 次</span></div>
+          <div class="fp-row"><span>延长学习</span><span><input type="number" id="fpExtStudy" min="1" max="60" /> 分</span></div>
+          <div class="fp-row"><span>延长休息</span><span><input type="number" id="fpExtBreak" min="1" max="60" /> 分</span></div>
+          <div class="fp-row"><span>自动下一阶段</span><div class="switch small" id="fpAuto"></div></div>
+        </div>
+        <div class="fp-block">
+          <div class="fp-label">提醒</div>
+          <div class="fp-row"><span>提示音</span><div class="switch small" id="fpSound"></div></div>
+          <div class="fp-row"><span>音量</span><input type="range" id="fpVolume" min="0" max="100" /></div>
+        </div>
+        <button class="btn ghost small" id="fpOpenMain">打开主界面</button>
+      </div>
+
+      <div class="float-mini" id="mini">🍅</div>
+      <div class="resize-grip" id="resizeGrip"></div>
+    </div>
+    <script type="module" src="js/float.js"></script>
+  </body>
+</html>

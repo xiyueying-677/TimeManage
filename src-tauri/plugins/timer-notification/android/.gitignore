@@ -1,0 +1,5 @@
+# Gradle / Kotlin build output for this plugin
+build/
+.gradle/
+.tauri/
+local.properties

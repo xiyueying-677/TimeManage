@@ -1,0 +1,416 @@
+/* 手机端适配：仅在窄屏 / Android 生效；桌面最小宽度 880，不受影响。 */
+@media (max-width: 760px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .app {
+    flex-direction: column;
+    height: 100dvh;
+  }
+
+  .content {
+    order: 1;
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    padding: 16px 14px calc(78px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* 侧边栏 → 底部导航 */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    border-right: none;
+    border-top: 1.5px solid var(--line);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 18px rgba(110, 150, 220, 0.12);
+  }
+
+  .sidebar .brand,
+  .sidebar-foot {
+    display: none;
+  }
+
+  .nav-btn {
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: 7px 4px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    line-height: 1.2;
+  }
+
+  .nav-btn .ico {
+    font-size: 19px;
+    line-height: 1;
+  }
+
+  .nav-btn.active {
+    box-shadow: none;
+    background: var(--primary-soft);
+  }
+
+  .view-head {
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .view-head h2 {
+    font-size: 19px;
+  }
+
+  .view-head .desc {
+    font-size: 12px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  /* 番茄钟：圆环在前，选择卡片在后 */
+  .pomo-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .pomo-main {
+    order: -1;
+    width: 100%;
+    gap: 14px;
+    padding: 16px 12px;
+  }
+
+  .pomo-side {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .ring-wrap {
+    width: 224px;
+    height: 224px;
+  }
+
+  .time-text {
+    font-size: 44px;
+  }
+
+  .phase-name {
+    font-size: 12px;
+  }
+
+  .cycle-text {
+    font-size: 11.5px;
+  }
+
+  .pomo-modes {
+    gap: 6px;
+  }
+
+  .pomo-actions {
+    gap: 8px;
+  }
+
+  .pomo-actions .btn {
+    padding: 10px 15px;
+    font-size: 13.5px;
+  }
+
+  .pomo-hint {
+    font-size: 12px;
+  }
+
+  /* 统计 */
+  .stat-filters {
+    gap: 6px;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .stat-card {
+    padding: 12px 14px;
+  }
+
+  .stat-card .value {
+    font-size: 21px;
+    margin-top: 6px;
+  }
+
+  .date-jump {
+    font-size: 12px;
+  }
+
+  .date-jump input[type="date"] {
+    width: 132px;
+  }
+
+  .chart {
+    padding: 12px 10px 6px;
+    margin-bottom: 14px;
+  }
+
+  .chart-head {
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+
+  .chart-legend {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-size: 11px;
+  }
+
+  .chart-legend > span {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .chart-body {
+    height: 140px;
+    gap: 2px;
+  }
+
+  .chart-labels .chart-label {
+    font-size: 9px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table.stats {
+    min-width: 600px;
+  }
+
+  table.stats th,
+  table.stats td {
+    padding: 9px 10px;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+
+  .session-head {
+    margin: 16px 0 10px;
+    gap: 8px;
+  }
+
+  .pager .pager-btn {
+    min-width: 34px;
+    height: 34px;
+  }
+
+  /* 倒计时日历 */
+  .cal-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cal-layout > .card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cal-head {
+    margin-bottom: 10px;
+  }
+
+  .cal-head .month {
+    font-size: 16px;
+  }
+
+  .cal-grid {
+    gap: 4px;
+  }
+
+  .cal-cell {
+    min-height: 52px;
+    padding: 3px;
+    gap: 2px;
+    border-radius: 9px;
+  }
+
+  .cal-cell .day {
+    font-size: 11.5px;
+  }
+
+  .cal-dow {
+    font-size: 11px;
+    padding-bottom: 2px;
+  }
+
+  .cal-ev {
+    font-size: 9.5px;
+    padding: 1px 3px;
+    border-radius: 5px;
+  }
+
+  .cal-list-item {
+    gap: 8px;
+    padding: 10px 2px;
+  }
+
+  .cal-list-item .days {
+    width: 48px;
+    padding: 5px 0;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .cal-list-item .acts .btn {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+
+  /* 设置 */
+  .settings-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .settings-grid .card h3 {
+    margin-bottom: 12px;
+  }
+
+  .form-row {
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .form-row input[type="number"] {
+    width: 80px;
+  }
+
+  .form-row input.sync-port {
+    width: 84px;
+  }
+
+  .form-row input.sync-host {
+    width: 150px;
+  }
+
+  .sync-select {
+    min-width: 128px;
+  }
+
+  .form-col {
+    gap: 9px;
+  }
+
+  .switch,
+  .switch.small {
+    flex: none;
+  }
+
+  .btn {
+    padding: 9px 16px;
+  }
+
+  .btn.small {
+    padding: 7px 12px;
+  }
+
+  .chip {
+    padding: 8px 13px;
+  }
+
+  /* 防止移动端输入聚焦时缩放 */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* 弹窗与提示 */
+  .modal-overlay {
+    padding: 14px;
+  }
+
+  .modal-box {
+    min-width: 0 !important;
+    width: min(400px, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+    max-height: 82vh;
+    overflow-y: auto;
+    padding: 20px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .modal-icon {
+    font-size: 36px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+
+  .modal-actions {
+    gap: 8px;
+  }
+
+  .toast-wrap {
+    bottom: calc(76px + env(safe-area-inset-bottom));
+    width: calc(100vw - 28px);
+  }
+
+  .toast {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .ring-wrap {
+    width: 196px;
+    height: 196px;
+  }
+
+  .time-text {
+    font-size: 38px;
+  }
+
+  .nav-btn {
+    font-size: 10.5px;
+  }
+
+  .stat-card .value {
+    font-size: 19px;
+  }
+}
+
+/* Android 专属：桌面入口/悬浮窗在手机上不可用 */
+html[data-platform="android"] .desktop-only {
+  display: none !important;
+}

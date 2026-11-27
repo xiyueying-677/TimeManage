@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>倒计时</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/float.css" />
+  </head>
+  <body>
+    <div class="float-card" id="card">
+      <div class="float-head" data-tauri-drag-region>
+        <div class="float-title"><span class="dot-phase"></span><span>倒计时</span></div>
+        <div class="float-head-actions">
+          <button class="float-icon" id="add" title="添加倒计时">＋</button>
+          <button class="float-icon" id="collapse" title="收起为小图标">▸</button>
+          <button class="float-close" id="close" title="隐藏">×</button>
+        </div>
+      </div>
+
+      <div class="float-list" id="list"></div>
+      <div class="float-foot" id="foot"></div>
+
+      <div class="float-form" id="form">
+        <div class="field">
+          <label>事件名称</label>
+          <input type="text" id="fTitle" placeholder="例如：考试、生日" />
+        </div>
+        <div class="field">
+          <label>日期</label>
+          <input type="date" id="fDate" />
+        </div>
+        <div class="fp-row"><span>每年重复</span><div class="switch small" id="fRecurring"></div></div>
+        <div class="field">
+          <label>提前提醒（天）</label>
+          <input type="number" id="fRemind" min="0" max="365" value="0" />
+        </div>
+        <div class="field">
+          <label>备注</label>
+          <input type="text" id="fNote" placeholder="可选" />
+        </div>
+        <div style="display:flex;gap:6px;margin-top:2px">
+          <button class="btn ghost small" id="fCancel" style="flex:1">取消</button>
+          <button class="btn small" id="fSave" style="flex:1">保存</button>
+        </div>
+      </div>
+
+      <div class="float-mini" id="mini">⏳</div>
+      <div class="resize-grip" id="resizeGrip"></div>
+    </div>
+    <script type="module" src="js/countdown-float.js"></script>
+  </body>
+</html>

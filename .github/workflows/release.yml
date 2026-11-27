@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Build Windows exe
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - name: Build release
+        working-directory: src-tauri
+        run: cargo build --release
+      - name: Rename artifact
+        shell: pwsh
+        run: Copy-Item src-tauri/target/release/timemanage.exe TimeManage.exe
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: TimeManage.exe
+          generate_release_notes: true

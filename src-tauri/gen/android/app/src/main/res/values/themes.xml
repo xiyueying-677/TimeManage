@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 应用固定浅色主题，与 WebView 内的柔和蓝色界面保持一致 -->
+    <style name="Theme.timemanage" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">#f3f7ff</item>
+    </style>
+</resources>

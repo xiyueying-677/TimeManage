@@ -1,0 +1,21 @@
+# Normalize line endings for text files (repo is developed on Windows, built everywhere)
+* text=auto eol=lf
+
+# Windows scripts must keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Gradle shell launcher must stay LF
+gradlew text eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.icns binary
+*.jar binary
+*.so binary
+*.dll binary
+*.exe binary

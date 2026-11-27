@@ -1,0 +1,26 @@
+{
+  "name": "timemanage",
+  "private": true,
+  "version": "0.1.0",
+  "description": "番茄钟 + 倒计时日历 桌面应用",
+  "type": "module",
+  "license": "MIT",
+  "author": "xiyueying",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiyueying-677/TimeManage.git"
+  },
+  "homepage": "https://github.com/xiyueying-677/TimeManage#readme",
+  "bugs": {
+    "url": "https://github.com/xiyueying-677/TimeManage/issues"
+  },
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "test": "node --test \"src/js/**/*.test.mjs\""
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

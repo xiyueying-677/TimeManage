@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 架构与构建文档
+    url: https://github.com/xiyueying-677/TimeManage/tree/main/docs
+    about: 先看看架构说明与 Android 构建文档，很多问题在那里已有答案
